@@ -4,21 +4,21 @@ import java.awt.FlowLayout;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
+import javax.swing.JTextPane;
 
-public class PanelField extends JPanel implements IForm {
+public class Texte extends JPanel implements InterfaceForm {
 
 	private JLabel label = new JLabel();
-	private JTextField textField = new JTextField(50);
+	private JTextPane textField = new JTextPane();
 
-	public PanelField(String attribute) {
+	public Texte(String attribute) {
 		label.setText(attribute);
 		setLayout(new FlowLayout());
 		add(label);
 		add(textField);
 	}
 
-	public PanelField(String attribute, String value) {
+	public Texte(String attribute, String value) {
 		this(attribute);
 		textField.setText(value);
 	}

@@ -4,21 +4,21 @@ import java.awt.FlowLayout;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextPane;
+import javax.swing.JTextField;
 
-public class PanelText extends JPanel implements IForm {
+public class ChampLibre extends JPanel implements InterfaceForm {
 
 	private JLabel label = new JLabel();
-	private JTextPane textField = new JTextPane();
+	private JTextField textField = new JTextField(30);
 
-	public PanelText(String attribute) {
+	public ChampLibre(String attribute) {
 		label.setText(attribute);
 		setLayout(new FlowLayout());
 		add(label);
 		add(textField);
 	}
 
-	public PanelText(String attribute, String value) {
+	public ChampLibre(String attribute, String value) {
 		this(attribute);
 		textField.setText(value);
 	}
@@ -35,6 +35,5 @@ public class PanelText extends JPanel implements IForm {
 
 	public void setText(String treatement) {
 		textField.setText(treatement);
-
 	}
 }

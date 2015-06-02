@@ -10,14 +10,14 @@ import java.util.Map;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
-public class PanelValid extends JPanel implements MouseListener {
+public class FormValider extends JPanel implements MouseListener {
 
 	private JButton ok = new JButton("Ok");
-	private List<IForm> listForm;
-	private PanelField panelFile;
-	private PanelText textPane;
+	private List<InterfaceForm> listForm;
+	private ChampLibre panelFile;
+	private Texte textPane;
 
-	public PanelValid(List<IForm> listForm, PanelText textPane, PanelField panelFile) {
+	public FormValider(List<InterfaceForm> listForm, Texte textPane, ChampLibre panelFile) {
 		add(ok);
 		this.textPane = textPane;
 		this.listForm = listForm;
@@ -30,7 +30,7 @@ public class PanelValid extends JPanel implements MouseListener {
 	public void mouseClicked(MouseEvent e) {
 		Read read = new Read();
 		Map<String, String> mapAttributes = new HashMap<String, String>();
-		for (IForm panel : listForm) {
+		for (InterfaceForm panel : listForm) {
 			mapAttributes.put(panel.getAttribut(), panel.getValue());
 		}
 		try {

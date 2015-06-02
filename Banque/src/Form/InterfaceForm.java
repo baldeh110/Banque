@@ -1,6 +1,6 @@
 package Form;
 
-public interface IForm {
+public interface InterfaceForm {
 	public String getValue();
 
 	public String getAttribut();
