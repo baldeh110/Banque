@@ -9,23 +9,21 @@ import javax.swing.JTextPane;
 public class Texte extends JPanel implements InterfaceForm {
 
 	private JLabel label = new JLabel();
-	private JTextPane textField = new JTextPane();
 
 	public Texte(String attribute) {
 		label.setText(attribute);
 		setLayout(new FlowLayout());
 		add(label);
-		add(textField);
 	}
 
 	public Texte(String attribute, String value) {
 		this(attribute);
-		textField.setText(value);
+		label.setText(value);
 	}
 
 	@Override
 	public String getValue() {
-		return textField.getText();
+		return label.getText();
 	}
 
 	@Override
@@ -34,7 +32,7 @@ public class Texte extends JPanel implements InterfaceForm {
 	}
 
 	public void setText(String treatement) {
-		textField.setText(treatement);
+		label.setText(treatement);
 
 	}
 

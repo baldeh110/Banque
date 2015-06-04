@@ -25,10 +25,10 @@ public class FenetreFormulaire extends JFrame {
 		JPanel mainPanel = new JPanel();
 		mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.PAGE_AXIS));
 		
-		ChampLibre fichierModele = new ChampLibre("Fichier Modèle :", "src/Ressources/Clients_Données.arff");
+		ChampLibre fichierModele = new ChampLibre("Fichier Modèle :", "./Ressources/Clients_Données.arff");
 		mainPanel.add(fichierModele);
 		
-		Texte accroche = new Texte("Entrer les informations du Client :");
+		Texte accroche = new Texte("Entrer les informations du Client.");
 		mainPanel.add(accroche);
 
 		String[] checking_status = { "<0", "0<=X<200", ">=200", "no checking" };
