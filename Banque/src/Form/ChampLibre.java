@@ -36,4 +36,16 @@ public class ChampLibre extends JPanel implements InterfaceForm {
 	public void setText(String treatement) {
 		textField.setText(treatement);
 	}
+
+	@Override
+	public String getTypeChamps() {
+		// TODO Auto-generated method stub
+		return "String";
+	}
+
+	@Override
+	public Double getValueNum() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

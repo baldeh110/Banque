@@ -9,10 +9,12 @@ import javax.swing.JPanel;
 public class ChampChoix extends JPanel implements InterfaceForm {
 
 	private JLabel label = new JLabel();
+	private String attrib = "";
 	private JComboBox<String> comboBox = new JComboBox<String>();
 
-	public ChampChoix(String attribute, String[] params) {
-		label.setText(attribute);
+	public ChampChoix(String lab, String attribute, String[] params) {
+		label.setText(lab);
+		attrib = attribute;
 		comboBox = new JComboBox<String>(params);
 		setLayout(new FlowLayout());
 		add(label);
@@ -26,7 +28,19 @@ public class ChampChoix extends JPanel implements InterfaceForm {
 
 	@Override
 	public String getAttribut() {
-		return label.getText();
+		return attrib;
+	}
+
+	@Override
+	public String getTypeChamps() {
+		// TODO Auto-generated method stub
+		return "String";
+	}
+
+	@Override
+	public Double getValueNum() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

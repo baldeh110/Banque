@@ -10,33 +10,42 @@ import java.util.Map;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
+import Banque.Model;
+
 public class FormValider extends JPanel implements MouseListener {
 
-	private JButton ok = new JButton("Ok");
+	private JButton valider = new JButton("Valider");
 	private List<InterfaceForm> listForm;
 	private ChampLibre panelFile;
 	private Texte textPane;
 
 	public FormValider(List<InterfaceForm> listForm, Texte textPane, ChampLibre panelFile) {
-		add(ok);
+		add(valider);
 		this.textPane = textPane;
 		this.listForm = listForm;
 		this.panelFile = panelFile;
-		ok.addMouseListener(this);
+		valider.addMouseListener(this);
 	}
 
 	// Quand on clique sur le bouton, on donne la décision
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		Read read = new Read();
-		Map<String, String> mapAttributes = new HashMap<String, String>();
+		Model modeldetraitement = new Model();
+		Map<String,String> mapAttributes = new HashMap<String,String>();
+		Map<String,Double> mapAttributesNum = new HashMap<String, Double>();
+		
 		for (InterfaceForm panel : listForm) {
-			mapAttributes.put(panel.getAttribut(), panel.getValue());
+			if (panel.getTypeChamps() == "String") {
+				mapAttributes.put(panel.getAttribut(), panel.getValue());
+			}
+			else if (panel.getTypeChamps() == "Double"){
+				mapAttributesNum.put(panel.getAttribut(), panel.getValueNum());
+			}
 		}
 		try {
-			textPane.setText(read.treatement(new File(panelFile.getValue()), mapAttributes));
+			//On fait le traitement
+			textPane.setText(modeldetraitement.traitement(panelFile.getValue(), mapAttributes,mapAttributesNum));
 		} catch (Exception e1) {
-			// TODO Auto-generated catch block
 			textPane.setText(e1.getMessage());
 			e1.printStackTrace();
 		}

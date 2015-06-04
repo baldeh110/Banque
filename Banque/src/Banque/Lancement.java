@@ -4,7 +4,7 @@ import java.net.URISyntaxException;
 
 import Form.FenetreFormulaire;
 
-public class EntryPoint {
+public class Lancement {
 
 	public static void main(String[] args) {
 		FenetreFormulaire fenetre;

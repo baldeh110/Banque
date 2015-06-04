@@ -37,4 +37,16 @@ public class Texte extends JPanel implements InterfaceForm {
 		textField.setText(treatement);
 
 	}
+
+	@Override
+	public String getTypeChamps() {
+		// TODO Auto-generated method stub
+		return "String";
+	}
+
+	@Override
+	public Double getValueNum() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
